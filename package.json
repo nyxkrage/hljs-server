@@ -1,0 +1,14 @@
+{
+  "name": "ts-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "highlight.js": "^10.6.0"
+  }
+}
