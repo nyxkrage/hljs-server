@@ -21,17 +21,18 @@ server.on('error', function (e) {
         var clientSocket = new net.Socket();
         clientSocket.on('error', function(e) { // handle error trying to talk to server
             if (e.code == 'ECONNREFUSED') {  // No other server listening
-                fs.unlinkSync('/tmp/sfss.sock');
-                server.listen('/tmp/sfss.sock', function() { //'listening' listener
+                fs.unlinkSync('/tmp/sfss/sfss.sock');
+                server.listen('/tmp/sfss/sfss.sock', function() { //'listening' listener
                     console.log('server recovered');
                 });
             }
         });
-        clientSocket.connect({path: '/tmp/sfss.sock'}, function() { 
+        clientSocket.connect({path: '/tmp/sfss/sfss.sock'}, function() { 
             console.log('Server running, giving up...');
             process.exit();
         });
     }
 });
 
-server.listen('/tmp/sfss.sock');
+console.log("Started");
+server.listen('/tmp/sfss/sfss.sock');
